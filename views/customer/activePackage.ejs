@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <% include ../partials/head %> 
+    <% include ../partials/cssPanels %>
+</head>
+<body class="hold-transition skin-yellow sidebar-mini wysihtml5-supported">
+<div class="wrapper">
+    
+    <% include ../partials/customerPanelTopLeft %>
+  
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Aktywne karnety
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="/customer/panel"><i class="fa fa-user"></i> Panel zawodnika</a></li>
+        <li >Karnety</li>
+        <li class="active">Aktywny karnet</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <% if (typeof customer.activePackage != 'undefined' && customer.activePackage.length != 0) { %>
+        <div class="row">
+            <% customer.activePackage.forEach(package => { %>
+                <div class="col-md-4">
+                    <div class="box box-warning">
+                        <div class="box-header with-border">
+                            <center><h2 class="box-title"><%= package.name %></h2></center>
+                        </div>
+                        <div class="box-body">
+                          <strong><i class="fa fa-money margin-r-5"></i> Cena</strong>
+            
+                          <span class="pull-right"><%= package.price %> zł  </span>      
+                            
+                          <hr>
+                            
+                          <strong><i class="fa fa-clock-o margin-r-5"></i> Do kiedy?</strong>
+            
+                          <span class="pull-right"><%= package.timeLimit == 0 ? "Bez limitu" : package.endDate %> </span>
+            
+                          <hr>
+                          
+                          <strong><i class="fa fa-calendar margin-r-5"></i> Ile dni zostało?</strong>
+            
+                          <span class="pull-right"><%= package.timeLimit == 0 ? "Nieskończenie wiele" : Math.round((package.purchaseDate - new Date()) / (1000 * 60 * 60 * 24) + package.timeLimit) %> </span>
+                    
+                          <hr>
+            
+                          <strong><i class="fa fa-sign-in margin-r-5"></i> Ile wejść zostało?</strong>
+            
+                          <span class="pull-right"><%= package.entrancesLeft == -1 ? "Nieskończenie wiele" : package.entrancesLeft %></span>
+            
+                          <hr>
+            
+                          <strong><i class="fa fa-pencil margin-r-5"></i> Sztuki walki?</strong>
+            
+                          <span class="pull-right">Wszystkie</span>
+                        </div>
+                    </div>
+                </div>    
+            <% }); %>
+        </div>
+        <% } else { %>
+        <h1>Brak aktywnych karnetów, napraw ten błąd jak najszybciej :)</h1>
+        <a href="/customer/package/buy" class="btn btn-primary">Kup karnet</a>
+        <% } %>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <% include ../partials/ciekawostki %>
+</div>
+<% include ../partials/footerBts3 %>
+<% include ../partials/scripts %>
+<script src="/scripts/adminlte.min.js"></script>
+</body>
+</html>

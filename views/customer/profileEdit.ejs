@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <% include ../partials/head %> 
+    <% include ../partials/cssPanels %>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/bootstrap-float-label/v4.0.2/bootstrap-float-label.min.css"/>
+</head>
+<body class="hold-transition skin-yellow sidebar-mini wysihtml5-supported">
+<div class="wrapper">
+    
+    <% include ../partials/customerPanelTopLeft %>
+  
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Profil zawodnika
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="/customer/panel"><i class="fa fa-user"></i> Panel zawodnika</a></li>
+        <li class="active">Profil</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-md-3">
+            <div class="box box-warning">
+            <div class="box-body box-profile">
+              <img class="profile-user-img img-responsive img-circle" src="<%= customer.image %>" alt="User profile picture">
+
+              <h3 class="profile-username text-center"><%= customer.name + " " + customer.surname %></h3>
+
+              <!--<p class="text-muted text-center">poziom członkostwa</p>-->
+
+              <ul class="list-group list-group-unbordered">
+                <li class="list-group-item">
+                  <b>Członek od</b> <a class="pull-right"><%= customer.joinDate %></a>
+                </li>
+                <!--<li class="list-group-item">-->
+                <!--  <b>Liczba pkt</b> <a class="pull-right">543</a>-->
+                <!--</li>-->
+              </ul>
+              <a href="/customer/addPhoto" class="btn btn-primary btn-block"><b>Zmień zdjęcie profilowe</b></a>
+            </div>
+            <!-- /.box-body -->
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-md-9">
+            <form action="/customer?_method=PUT" method="POST">
+            <div class="box box-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title">Dane</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                
+            <div class="form-group  has-float-label">
+            <input type="text" name="Customer[name]" class="form-control" id="name" placeholder="Imię" required value="<%= customer.name %>" pattern="[\p{L}]{2,14}">
+            <label for="name">Imię</label>
+            </div>
+              
+            <div class="form-group  has-float-label">
+            <input type="text" name="Customer[surname]" class="form-control" id="surname" placeholder="Nazwisko" required value="<%= customer.surname %>" pattern="[-\p{L}]{2,25}">
+            <label for="surname">Nazwisko</label>
+            </div>
+                
+            <div class="form-group  has-float-label">
+            <select name="Customer[gender]" id="gender" class="form-control" required>
+                <option value="Mężczyzna" <% if(customer.gender == "Mężczyzna"){ %> selected <% } %>>Mężczyzna</option>
+                <option value="Kobieta" <% if(customer.gender == "Kobieta"){ %> selected <% } %>>Kobieta</option>
+            </select>
+            <label for="gender">Płeć</label>
+            </div>
+                
+            <div class="form-group  has-float-label">
+            <input type="text" name="Customer[phone]" class="form-control" id="phone" placeholder="Telefon" required pattern="[+0-9]{4,18}" title="Nie może zawierać spacji!" value="<%= customer.phone %>">
+            <label for="phone">Nr telefonu</label>
+            </div>
+                
+            <p class="black">Adres korespondencji</p>
+            <div class="row" style="width: 75%">
+                <div class="col-sm-9" style="padding-right: 0">
+                    <div class="form-group  has-float-label" style="width: 100%">
+                    <input type="text" name="address[street]" class="form-control" id="street" placeholder="Ulica" value="<%= customer.address.street %>">
+                    <label for="street">Ulica</label>
+                    </div>
+                </div>
+                <div class="col-sm-3" style="padding-right: 0">
+                    <div class="form-group  has-float-label" style="width: 100%">
+                    <input type="text" name="address[number]" class="form-control" id="number" placeholder="Numer" required value="<%= customer.address.number %>">
+                    <label for="number">Numer</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="width: 75%">
+                <div class="col-sm-3" style="padding-right: 0">
+                    <div class="form-group  has-float-label" style="width: 100%">
+                    <input type="text" name="address[zipCode]" class="form-control" id="zipCode" placeholder="Kod pocztowy" requiredpattern="[0-9]{2}\-[0-9]{3}" title="XX-XXX" value="<%= customer.address.zipCode %>">
+                    <label for="zipCode">Kod pocztowy</label>
+                    </div>
+                </div>
+                <div class="col-sm-9" style="padding-right: 0">
+                    <div class="form-group  has-float-label" style="width: 100%">
+                    <input type="text" name="address[city]" class="form-control" id="city" placeholder="Miasto" required pattern="[-\p{L}\x22. ]{2,35}" value="<%= customer.address.city %>">
+                    <label for="city">Miasto</label>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="form-group  has-float-label">
+            <input type="date" name="Customer[birthday]" class="form-control" id="birthday" placeholder="Data urodzenia" required value="<%= customer.birthday %>">
+            <label for="birthday">Data urodzenia</label>
+            </div>
+        
+            </div>
+            <div class="box-footer">
+                <button class="btn btn-primary btn-block"><b>Zmień dane</b></button>
+            </div>
+            </div>   
+            </form>
+        </div>
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <% include ../partials/ciekawostki %>
+</div>
+<% include ../partials/footerBts3 %>
+<% include ../partials/scripts %>
+<script src="/scripts/adminlte.min.js"></script>
+</body>
+</html>

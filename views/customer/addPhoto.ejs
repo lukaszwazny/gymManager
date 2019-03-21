@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <% include ../partials/head %> 
+    <% include ../partials/css %> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/addPhoto.css">
+</head>
+<body>
+<main>
+<div class="animated fadeInUp container all-view-high">
+    <center>
+        <h1>Dodaj swoje zdjęcie</h1>
+        <p>Zdjęcie Twojej twarzy jest potrzebne do wyrobienia karty członkowskiej i nie będziemy go nikomu udostępniać w żadnym innym celu. Firma wyrabiająca karty jest zobowiązana do nieudostępniania Twoich danych nikomu, pod odpowiedzialnością karną.</p>
+        <a href="/customer/addPhoto/capture"><button class="btn btn-primary">Zrób zdjęcie kamerką!</button></a>
+        <a href="/customer/addPhoto/upload"><button class="btn btn-primary">Wyślij zdjęcie z dysku!</button></a>
+    </center>
+</div>
+</main>
+
+<% include ../partials/footer %>
+<% include ../partials/scripts %>
+</body>
+</html>

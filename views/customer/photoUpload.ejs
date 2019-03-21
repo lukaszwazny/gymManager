@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <% include ../partials/head %> 
+    <% include ../partials/css %> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/photoUpload.css">
+    <link rel="stylesheet" href="/stylesheets/cropper.min.css">
+</head>
+<body>
+<main>
+<div class="animated fadeInUp container all-view-high" id="dropbox">
+    <center>
+        <div id="upload">
+        <input type="file" id="imageUpload" accept="image/*" class="visually-hidden" onchange="handleFiles(this.files)">
+        <p>Przeciągnij i upuść zdjęcie tutaj lub 
+        <label for="imageUpload">kliknij</label>, aby wybrać zdjęcie z dysku.</p>
+        </div>
+        <div id="image">
+            <img id="img">    
+        </div>
+        <button class="btn btn-primary send">Gotowe!</button>
+    </center>
+</div>
+</main>
+
+<% include ../partials/footer %>
+<% include ../partials/scripts %>
+<script src="/scripts/cropper.min.js"></script>
+<script src="/scripts/photoUpload.js"></script>
+</body>
+</html>

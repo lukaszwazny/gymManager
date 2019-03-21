@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <% include ../partials/head %> 
+    <% include ../partials/css %> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/photoCapture.css">
+</head>
+<body>
+<main>
+<div class="animated fadeInUp container all-view-high">
+    <center>
+        <div class="padding"></div>
+        <div class="crop">
+            <video id="video" width="640" height="480" autoplay></video>
+            <canvas width="373" height="480"></canvas>
+            <canvas id="c" width="373" height="480"></canvas>
+        </div>
+        <button class="btn btn-primary turn-on" onclick="getStream('video')">Włącz kamerę</button>
+        <button class="btn btn-primary capture" onclick="takePhoto()">Zrób zdjęcie!</button>
+        <div id="taken">
+        <button class="btn btn-primary" onclick="send()">Wyślij!</button>
+        <button class="btn btn-primary" onclick="again()">Jeszcze raz!</button>
+        </div>
+    </center>
+</div>
+</main>
+
+<% include ../partials/footer %>
+<% include ../partials/scripts %>
+<script src="/scripts/photoCapture.js"></script>
+</body>
+</html>

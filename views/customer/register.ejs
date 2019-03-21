@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <% include ../partials/head %> 
+    <% include ../partials/css %> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/bootstrap-float-label/v4.0.2/bootstrap-float-label.min.css"/>
+    <link rel="stylesheet" href="/stylesheets/register.css"/>
+</head>
+<body>
+<main>
+<!-- Progress bar -->
+        <div class="progress">
+  <div class="circle">
+    <span class="label">1</span>
+    <div class="title">Wstęp</div>
+  </div>
+  <span class="bar"></span>
+  <div class="circle">
+    <span class="label">2</span>
+    <div class="title">Hasło</div>
+  </div>
+  <span class="bar"></span>
+  <div class="circle">
+    <span class="label">3</span>
+    <div class="title">Dane</div>
+  </div>
+  <span class="bar"></span>
+  <div class="circle">
+    <span class="label">4</span>
+    <div class="title">Adres</div>
+  </div>
+  <span class="bar"></span>
+  <div class="circle">
+    <span class="label">5</span>
+    <div class="title">Koniec</div>
+  </div>
+</div>    
+
+<form class="container" action="/customer/register/<%= cryptoMail %>" method="POST">
+<div id="first" class="all-view-high">
+    <div class="padding"></div>
+    <% if (error && error != "") {%>
+    <div class="alert alert-danger" role="alert">
+          <%= error %>
+    </div>
+    <% } %>
+    <div id="inside-first" class="animated fadeInUp">
+        <h1>Witaj!</h1>
+        <p>Bardzo się cieszymy, że to właśnie Ty staniesz się nowym członkiem K. S "Kodokan"!</p>
+        <p>Zanim jednak to się stanie, musimy poprosić Cię o parę informacji o Tobie. Wszystkie informacje, które podasz będą całkowicie bezpieczne - nasz system spełnia wszytkie wymogi bezpieczeństwa.</p>
+        <p>W jednym z kroków poprosimy Cię również o przesłanie nam (bądź zrobienie kamerką internetową) zdjęcia Twojej twarzy. Wspominamy o tym wcześniej, abyś się przygotował <i class="far fa-smile"></i></p>
+        <a href="#third"><button class="btn btn-primary">Dalej!</button></a>    
+    </div>
+</div>
+<!--<div id="second" class="all-view-high">
+    <h1>Najpierw sprawdź, czy to na pewno Twój e-mail: </h1>
+    <div class="form-group has-float-label">
+    <input type="email" name="Customer[username]" class="form-control" id="email" aria-describedby="emailHelp" placeholder="E-mail" value="<%= mail %>" required>
+    <label for="email">Sprawdź e-mail</label>
+    <p>Jeżeli coś się nie zgadza - popraw <i class="far fa-smile"></i></p>
+    </div>
+    <p>Podany przez Ciebie e-mail, będzie pełnił funkcję loginu.</p>
+    <a href="#third"><button class="btn btn-primary">Dalej!</button></a>
+</div>-->
+<div id="third" class="all-view-high">
+    <div class="padding"></div>
+    <h1>Wybierz swoje hasło:</h1>
+    <div class="form-group  has-float-label">
+    <input type="password" name="password" class="form-control" id="password" placeholder="Hasło" required pattern="(?=.*\d)(?=.*[a-z]).{8,}" title="Musi zawierać przynajmniej 8 znaków, w tym przynajmniej 1 cyfrę!">
+    <label for="password">Wpisz hasło</label>
+    </div>
+    <div class="form-group has-float-label">
+    <input type="password" class="form-control" id="password-confirm" placeholder="Hasło" required>
+    <label for="password-confirm">Wpisz hasło jeszcze raz</label>
+    <p id="message"></p>
+    </div>
+    <a href="#fourth"><button class="btn btn-primary">Dalej!</button></a>
+</div>
+<div id="fourth" class="all-view-high">
+    <div class="padding"></div>
+    <h1>Przedstaw się:</h1>
+    <div class="form-group  has-float-label">
+    <input type="text" name="Customer[name]" class="form-control" id="name" placeholder="Imię" required pattern="[\p{L}]{2,14}">
+    <label for="name">Podaj swoje imię</label>
+    </div>
+    <div class="form-group  has-float-label">
+    <input type="text" name="Customer[surname]" class="form-control" id="surname" placeholder="Nazwisko" required pattern="[-\p{L}]{2,25}">
+    <label for="surname">Podaj swoje nazwisko</label>
+    </div>
+    <div class="form-group  has-float-label">
+    <select name="Customer[gender]" id="gender" class="form-control" required>
+        <option selected disabled hidden>Płeć...</option>
+        <option value="Mężczyzna">Mężczyzna</option>
+        <option value="Kobieta">Kobieta</option>
+    </select>
+    <label for="gender">Podaj płeć</label>
+    </div>
+    <div class="form-group  has-float-label">
+    <input type="date" name="Customer[birthday]" class="form-control" id="birthday" placeholder="Data urodzenia" required>
+    <label for="birthday">Podaj datę urodzenia</label>
+    </div>
+    <a href="#fifth"><button class="btn btn-primary">Dalej!</button></a>
+</div>
+<div id="fifth" class="all-view-high">
+    <div class="padding"></div>
+    <h1>Podaj dane kontaktowe:</h1>
+    <div class="form-group  has-float-label">
+    <input type="tel" name="Customer[phone]" class="form-control" id="phone" placeholder="Telefon" required pattern="[+0-9]{4,18}" title="Nie może zawierać spacji!">
+    <label for="phone">Podaj numer telefonu</label>
+    </div>
+    <p style="width: 75%; margin-bottom: 0.4em">Adres korespondencji:</p>
+    <div class="row" style="width: 75%">
+        <div class="col-sm-9" style="padding-right: 0">
+            <div class="form-group  has-float-label" style="width: 100%">
+            <input type="text" name="address[street]" class="form-control" id="street" placeholder="Ulica">
+            <label for="street">Podaj ulicę</label>
+            </div>
+        </div>
+        <div class="col-sm-3" style="padding-right: 0">
+            <div class="form-group  has-float-label" style="width: 100%">
+            <input type="text" name="address[number]" class="form-control" id="number" placeholder="Numer" required>
+            <label for="number" >Numer</label>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="width: 75%">
+        <div class="col-sm-3" style="padding-right: 0">
+            <div class="form-group  has-float-label" style="width: 100%">
+            <input type="text" name="address[zipCode]" class="form-control" id="zipCode" placeholder="Kod pocztowy" required pattern="[0-9]{2}\-[0-9]{3}" title="XX-XXX">
+            <label for="zipCode">Kod pocztowy</label>
+            </div>
+        </div>
+        <div class="col-sm-9" style="padding-right: 0">
+            <div class="form-group  has-float-label" style="width: 100%">
+            <input type="text" name="address[city]" class="form-control" id="city" placeholder="Miasto" required pattern="[-\p{L}\x22. ]{2,35}">
+            <label for="city">Podaj miasto</label>
+            </div>
+        </div>
+    </div>
+    <a href="#sixth"><button class="btn btn-primary">Dalej!</button></a>
+</div>
+<div id="sixth" class="all-view-high">
+    <div class="padding"></div>
+    <h1>Ok, już ostatni krok!</h1>
+    <div class="form-group form-check">
+    <input type="checkbox" name="regulamin" class="form-check-input" id="regulamin" required>
+    <label class="form-check-label" for="regulamin">Oświadczam, że zapoznałem się ze szczegółowymi warunkami korzystania z usług K.S "Kodokan" określonymi w Regulaminie K.S "Kodokan" dostępnym <a href="#">TUTAJ</a> i akceptuję ich treść.*</label>
+    <input type="checkbox" name="dane" class="form-check-input" id="dane" required>
+    <label class="form-check-label" for="dane">Wyrażam zgodę na przetwarzanie moich danych osobowych w celu...*</label>
+    </div>
+  <button type="submit" class="btn btn-primary">Chcę dołączyć do klubu!</button>
+</div>
+</form>
+</main>
+
+<% include ../partials/footer %>
+<% include ../partials/scripts %>
+<script src="/scripts/jquery.scrollstop.min.js"></script>
+<script src="/scripts/register.js"></script>
+<script src="/scripts/scrollDown.js"></script>
+</body>
+</html>

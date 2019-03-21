@@ -1,0 +1,42 @@
+<!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-trophy"></i></a></li>
+      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-heartbeat"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Home tab content -->
+      <div class="tab-pane" id="control-sidebar-home-tab">
+        <h3 class="control-sidebar-heading">Ciekawostki - sztuki walki</h3>
+        <ul class="control-sidebar-menu">
+          <% customer.sportFacts.forEach((fact) => { %>
+            <li>
+              <p><%= fact %></p>
+            </li>  
+          <% }) %>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+      </div>
+      <!-- /.tab-pane -->
+      <!-- /.tab-pane -->
+      <!-- Settings tab content -->
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+          <h3 class="control-sidebar-heading">Ciekawostki - styl życia</h3>
+          <ul class="control-sidebar-menu">
+          <% customer.lifeStyleFacts.forEach((fact) => { %>
+            <li>
+              <p><%= fact %></p>
+            </li>  
+          <% }) %>
+        </ul>
+          
+      </div>
+      <!-- /.tab-pane -->
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>

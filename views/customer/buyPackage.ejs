@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <% include ../partials/head %> 
+    <% include ../partials/cssPanels %>
+    <link rel="stylesheet" href="/stylesheets/buyPackage.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
+</head>
+<body class="hold-transition skin-yellow sidebar-mini wysihtml5-supported">
+<div class="wrapper">
+    
+    <% include ../partials/customerPanelTopLeft %>
+  
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Kup Karnet
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="/customer/panel"><i class="fa fa-user"></i> Panel zawodnika</a></li>
+        <li >Karnety</li>
+        <li class="active">Kup Nowy</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <form action="/customer/package/buy" method="POST">
+        <div class="row">
+            <div class="col-sm-4">
+                <p class="black">Od kiedy ma obowiązywać karnet: </p>    
+            </div>
+            <div class="col-sm-8">
+                <div class="form-group">
+                <input type="date" name="purchaseDate" id="date" class="form-control" required>
+                </div>
+            </div>
+        </div>
+        <center><h2>Karnety OPEN</h2></center>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box box-warning" id="monthOpen">
+                    <div class="box-header with-border">
+                        <center><h2 class="box-title">Miesięczny</h2></center>
+                    </div>
+                    <div class="box-body">
+                      <strong><i class="fa fa-money margin-r-5"></i> Cena</strong>
+        
+                      <span class="pull-right">100 zł  </span>      
+                        
+                      <hr>
+                        
+                      <strong><i class="fa fa-clock-o margin-r-5"></i> Jak długo?</strong>
+        
+                      <span class="pull-right">30 dni </span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-sign-in margin-r-5"></i> Ilość wejść</strong>
+        
+                      <span class="pull-right">Bez limitu</span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-pencil margin-r-5"></i> Sztuki walki?</strong>
+        
+                      <span class="pull-right">Wszystkie</span>
+                    </div>
+                    <div class="box-footer">
+                        <center>
+                            <label class="btn btn-primary">
+                                <input type="radio" name="package" value="monthOpen" autocomplete="off" class="hidden" id="monthOpen" required>
+                                Wybierz
+                            </label>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-md-4">
+               <div class="box box-warning" id="twoWeekOpen">
+                    <div class="box-header with-border">
+                        <center><h2 class="box-title">2-tygodniowy</h2></center>
+                    </div>
+                    <div class="box-body">
+                      <strong><i class="fa fa-money margin-r-5"></i> Cena</strong>
+        
+                      <span class="pull-right">60 zł  </span>      
+                        
+                      <hr>
+                        
+                      <strong><i class="fa fa-clock-o margin-r-5"></i> Jak długo?</strong>
+        
+                      <span class="pull-right">14 dni </span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-sign-in margin-r-5"></i> Ilość wejść</strong>
+        
+                      <span class="pull-right">Bez limitu</span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-pencil margin-r-5"></i> Sztuki walki?</strong>
+        
+                      <span class="pull-right">Wszystkie</span>
+                    </div>
+                    <div class="box-footer">
+                        <center>
+                            
+                            <label class="btn btn-primary">
+                                <input type="radio" name="package" value="twoWeekOpen" autocomplete="off" class="hidden" id="twoWeekOpen">
+                                Wybierz
+                            </label>
+                        </center>
+                    </div>    
+                </div>
+            </div>
+            <div class="col-md-4">
+               <div class="box box-warning" id="weekOpen">
+                    <div class="box-header with-border">
+                        <center><h2 class="box-title">Tygodniowy</h2></center>
+                    </div>
+                    <div class="box-body">
+                      <strong><i class="fa fa-money margin-r-5"></i> Cena</strong>
+        
+                      <span class="pull-right">40 zł  </span>      
+                        
+                      <hr>
+                        
+                      <strong><i class="fa fa-clock-o margin-r-5"></i> Jak długo?</strong>
+        
+                      <span class="pull-right">7 dni </span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-sign-in margin-r-5"></i> Ilość wejść</strong>
+        
+                      <span class="pull-right">Bez limitu</span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-pencil margin-r-5"></i> Sztuki walki?</strong>
+        
+                      <span class="pull-right">Wszystkie</span>
+                    </div>
+                    <div class="box-footer">
+                        <center>
+                            <label class="btn btn-primary">
+                                <input type="radio" name="package" value="weekOpen" autocomplete="off" class="hidden" id="weekOpen">
+                                Wybierz
+                            </label>
+                        </center>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        <center><h2>Karnety rodzinne</h2></center>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box box-warning" id="kidsOpen">
+                    <div class="box-header with-border">
+                        <center><h2 class="box-title">Dla dzieci</h2></center>
+                    </div>
+                    <div class="box-body">
+                      <strong><i class="fa fa-money margin-r-5"></i> Cena</strong>
+        
+                      <span class="pull-right">85 zł  </span>      
+                        
+                      <hr>
+                        
+                      <strong><i class="fa fa-clock-o margin-r-5"></i> Jak długo?</strong>
+        
+                      <span class="pull-right">30 dni </span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-sign-in margin-r-5"></i> Ilość wejść</strong>
+        
+                      <span class="pull-right">Bez limitu</span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-pencil margin-r-5"></i> Sztuki walki?</strong>
+        
+                      <span class="pull-right">Grupy dziecięce</span>
+                      
+                      <hr>
+        
+                      <strong><i class="fa fa-question-circle margin-r-5"></i> Dla kogo?</strong>
+        
+                      <span class="pull-right">Dzieci do lat 13</span>
+                    </div>
+                    <div class="box-footer">
+                        <center>
+                            <label class="btn btn-primary">
+                                <input type="radio" name="package" value="kidsOpen" autocomplete="off" class="hidden" id="kidsOpen">
+                                Wybierz
+                            </label>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-md-4">
+               <div class="box box-warning" id="bigFamily">
+                    <div class="box-header with-border">
+                        <center><h2 class="box-title">Rodzina 3+</h2></center>
+                    </div>
+                    <div class="box-body">
+                      <strong><i class="fa fa-money margin-r-5"></i> Cena</strong>
+        
+                      <span class="pull-right">140 zł  </span>      
+                        
+                      <hr>
+                        
+                      <strong><i class="fa fa-clock-o margin-r-5"></i> Jak długo?</strong>
+        
+                      <span class="pull-right">30 dni </span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-sign-in margin-r-5"></i> Ilość wejść</strong>
+        
+                      <span class="pull-right">Bez limitu</span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-pencil margin-r-5"></i> Sztuki walki?</strong>
+        
+                      <span class="pull-right">Wszystkie</span>
+                      
+                      <hr>
+        
+                      <strong><i class="fa fa-users margin-r-5"></i> Ilość trenujących osób?</strong>
+        
+                      <span class="pull-right">Bez limitu</span>
+                      
+                      <hr>
+        
+                      <strong><i class="fa fa-question-circle margin-r-5"></i> Dla kogo?</strong>
+        
+                      <span class="pull-right">Posiadacze Karty Dużej Rodziny bądź Rodzina 3+</span>
+                    </div>
+                    <div class="box-footer">
+                        <center>
+                            
+                            <label class="btn btn-primary">
+                                <input type="radio" name="package" value="bigFamily" autocomplete="off" class="hidden" id="bigFamily">
+                                Wybierz
+                            </label>
+                        </center>
+                    </div>    
+                </div>
+            </div>
+            <div class="col-md-4">
+               <div class="box box-warning" id="familyOpen">
+                    <div class="box-header with-border">
+                        <center><h2 class="box-title">Rodzinny</h2></center>
+                    </div>
+                    <div class="box-body">
+                      <strong><i class="fa fa-money margin-r-5"></i> Cena</strong>
+        
+                      <span class="pull-right">160 zł  </span>      
+                        
+                      <hr>
+                        
+                      <strong><i class="fa fa-clock-o margin-r-5"></i> Jak długo?</strong>
+        
+                      <span class="pull-right">30 dni </span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-sign-in margin-r-5"></i> Ilość wejść</strong>
+        
+                      <span class="pull-right">Bez limitu</span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-pencil margin-r-5"></i> Sztuki walki?</strong>
+        
+                      <span class="pull-right">Wszystkie</span>
+                      
+                      <hr>
+        
+                      <strong><i class="fa fa-users margin-r-5"></i> Ilość trenujących osób?</strong>
+        
+                      <span class="pull-right">Bez limitu</span>
+                      
+                    </div>
+                    <div class="box-footer">
+                        <center>
+                            <label class="btn btn-primary">
+                                <input type="radio" name="package" value="familyOpen" autocomplete="off" class="hidden" id="familyOpen">
+                                Wybierz
+                            </label>
+                        </center>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        <center><h2>Karnety na wejścia</h2></center>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box box-warning" id="oneEntrance">
+                    <div class="box-header with-border">
+                        <center><h2 class="box-title">Jednorazowe</h2></center>
+                    </div>
+                    <div class="box-body">
+                      <strong><i class="fa fa-money margin-r-5"></i> Cena</strong>
+        
+                      <span class="pull-right">15 zł</span>      
+                        
+                      <hr>
+                        
+                      <strong><i class="fa fa-clock-o margin-r-5"></i> Jak długo?</strong>
+        
+                      <span class="pull-right">Bez limitu </span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-sign-in margin-r-5"></i> Ilość wejść</strong>
+        
+                      <span class="pull-right">1</span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-pencil margin-r-5"></i> Sztuki walki?</strong>
+        
+                      <span class="pull-right">Wszystkie</span>
+                    </div>
+                    <div class="box-footer">
+                        <center>
+                            <label class="btn btn-primary">
+                                <input type="radio" name="package" value="oneEntrance" autocomplete="off" class="hidden" id="oneEntrance">
+                                Wybierz
+                            </label>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-md-4">
+               <div class="box box-warning" id="fourEntrance">
+                    <div class="box-header with-border">
+                        <center><h2 class="box-title">Cztery</h2></center>
+                    </div>
+                    <div class="box-body">
+                      <strong><i class="fa fa-money margin-r-5"></i> Cena</strong>
+        
+                      <span class="pull-right">55 zł  </span>      
+                        
+                      <hr>
+                        
+                      <strong><i class="fa fa-clock-o margin-r-5"></i> Jak długo?</strong>
+        
+                      <span class="pull-right">Bez limitu </span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-sign-in margin-r-5"></i> Ilość wejść</strong>
+        
+                      <span class="pull-right">4</span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-pencil margin-r-5"></i> Sztuki walki?</strong>
+        
+                      <span class="pull-right">Wszystkie</span>
+                      
+                    </div>
+                    <div class="box-footer">
+                        <center>
+                            
+                            <label class="btn btn-primary">
+                                <input type="radio" name="package" value="fourEntrance" autocomplete="off" class="hidden" id="fourEntrance">
+                                Wybierz
+                            </label>
+                        </center>
+                    </div>    
+                </div>
+            </div>
+            <div class="col-md-4">
+               <div class="box box-warning" id="sixEntrance">
+                    <div class="box-header with-border">
+                        <center><h2 class="box-title">Sześć</h2></center>
+                    </div>
+                    <div class="box-body">
+                      <strong><i class="fa fa-money margin-r-5"></i> Cena</strong>
+        
+                      <span class="pull-right">80 zł  </span>      
+                        
+                      <hr>
+                        
+                      <strong><i class="fa fa-clock-o margin-r-5"></i> Jak długo?</strong>
+        
+                      <span class="pull-right">Bez limitu </span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-sign-in margin-r-5"></i> Ilość wejść</strong>
+        
+                      <span class="pull-right">6</span>
+        
+                      <hr>
+        
+                      <strong><i class="fa fa-pencil margin-r-5"></i> Sztuki walki?</strong>
+        
+                      <span class="pull-right">Wszystkie</span>
+                      
+                    </div>
+                    <div class="box-footer">
+                        <center>
+                            <label class="btn btn-primary">
+                                <input type="radio" name="package" value="sixEntrance" autocomplete="off" class="hidden" id="sixEntrance">
+                                Wybierz
+                            </label>    
+                        </center>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+          <!-- /.row -->  
+        <hr class="bigger">
+        <button class="btn btn-primary btn-block animated pulse infinite" id="buy">Kup karnet!</button>
+      </form>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <% include ../partials/ciekawostki %>
+</div>
+<% include ../partials/footerBts3 %>
+<% include ../partials/scripts %>
+<script src="/scripts/adminlte.min.js"></script>
+<script src="/scripts/buyPackage.js"></script>
+</body>
+</html>

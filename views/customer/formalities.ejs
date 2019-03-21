@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <% include ../partials/head %> 
+    <% include ../partials/cssPanels %>
+</head>
+<body class="hold-transition skin-yellow sidebar-mini">
+<div class="wrapper">
+
+  <% include ../partials/customerPanelTopLeft %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Strona główna
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="/customer/panel"><i class="fa fa-dashboard"></i> Panel zawodnika</a></li>
+        <li class="active">Formalności</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="box box-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title">Deklaracja członkowska</h3>
+              <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <p class="black">Status: <%= customer.declarationStatus ? "Oddana" : "Nieoddana" %> </p>
+              <a href="/customer/declarationPrint" class="btn btn-primary pull-right" target="_blank">Wydrukuj deklarację</a>
+            </div>
+            <!-- /.box-body -->
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="box box-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title">Karta członkowska</h3>
+            </div>
+            <div class="box-body">
+              <% if(!(Object.keys(customer.card).length === 0 && customer.card.constructor === Object)) { %>    
+              <p class="black">Data zamówienia: <%= customer.card.orderDate %></p>
+              <p class="black">Status: <%= customer.card.status == "opłacona" ? "gotowa" : customer.card.status %></p>
+              <% } else { %>
+              <p class="black">Nie zamówiono jeszcze karty!</p>
+              <% } %>
+              <a href="/customer/cardOrder" class="btn btn-primary pull-right" target="_blank">Zamów kartę :)</a>
+            </div>
+          </div>
+          </div>
+      </div>
+      <!-- /.row -->
+
+        </section>
+        <!-- right col -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <% include ../partials/ciekawostki %>
+</div>
+<% include ../partials/footerBts3 %>
+<% include ../partials/scripts %>
+<script src="/scripts/adminlte.min.js"></script>
+</body>
+</html>

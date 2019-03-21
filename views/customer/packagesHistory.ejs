@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <% include ../partials/head %> 
+    <% include ../partials/cssPanels %>
+</head>
+<body class="hold-transition skin-yellow sidebar-mini wysihtml5-supported">
+<div class="wrapper">
+    
+    <% include ../partials/customerPanelTopLeft %>
+  
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Historia kupionych karnetów
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="/customer/panel"><i class="fa fa-user"></i> Panel zawodnika</a></li>
+        <li >Karnety</li>
+        <li class="active">Historia</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <% if (typeof customer.packages != 'undefined' && customer.packages.length != 0) { %>
+        <div class="row">
+            <% customer.packages.reverse().forEach(package => { %>
+                <div class="col-md-4">
+                    <div class="box box-warning">
+                        <div class="box-header with-border">
+                            <center><h2 class="box-title"><%= package.name %></h2></center>
+                        </div>
+                        <div class="box-body">
+                          <strong><i class="fa fa-money margin-r-5"></i> Cena</strong>
+            
+                          <span class="pull-right"><%= package.price %> zł  </span>      
+                            
+                          <hr>
+                            
+                          <strong><i class="fa fa-clock-o margin-r-5"></i> Data rozpoczęcia</strong>
+            
+                          <span class="pull-right"><%= package.startDate %> </span>
+            
+                          <hr>
+                          
+                          <strong><i class="fa fa-calendar-o margin-r-5"></i> Data zakończenia</strong>
+            
+                          <span class="pull-right"><%= package.timeLimit == 0 ? "Brak limitu czasowego" : package.endDate %> </span>
+            
+                          <hr>
+            
+                          <strong><i class="fa fa-star margin-r-5"></i> Aktywny</strong>
+            
+                          <span class="pull-right"><%= package.active ? "Tak" : "Nie" %></span>
+            
+                          <hr>
+            
+                          <strong><i class="fa fa-pencil margin-r-5"></i> Sztuki walki?</strong>
+            
+                          <span class="pull-right">Wszystkie</span>
+                        </div>
+                    </div>
+                </div>    
+            <% }); %>
+        </div>
+        <% } else { %>
+        <h1>Brak zakupionych karnetów, napraw ten błąd jak najszybciej :)</h1>
+        <a href="/customer/package/buy" class="btn btn-primary">Kup karnet</a>
+        <% } %>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <% include ../partials/ciekawostki %>
+</div>
+<% include ../partials/footerBts3 %>
+<% include ../partials/scripts %>
+<script src="/scripts/adminlte.min.js"></script>
+</body>
+</html>

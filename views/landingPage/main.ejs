@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <% include ../partials/head %> 
+    <% include ../partials/css %> 
+    <link href="/stylesheets/landingPage.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/bootstrap-float-label/v4.0.2/bootstrap-float-label.min.css"/>
+</head>
+<body>
+<main>
+<section id="first">
+        <video autoplay muted loop class="animated fadeIn">
+            <source src="/videos/background.mp4" type="video/mp4">
+        </video>
+        <div id="content" class="animated fadeInUp">
+            <!--<a href="/">--><button id="back" class="btn btn-outline-secondary btn-lg"><i class="fas fa-arrow-left"></i>Powrót</button><!--</a>-->
+            <!--<a href="/customer/login">--><button type="button" class="btn btn-outline-secondary btn-lg login">Login</button><!--</a>-->
+            <div id="content-change">
+                <% /*console.log(badMail); console.log(mail);*/if((!mail || mail == "") && (!badMail || badMail == "") && (!loginFailure || loginFailure == "")) { %>
+                <% include firstDiv %>
+                <% } else if (mail && mail != ""){ %>
+                <% include successRegisterMail %>
+                <% } else if (badMail && badMail != ""){ %>
+                <% include mailExists %>
+                <% } else { %>
+                <% include loginFailure %>
+                <% } %>
+            </div>
+        </div>
+        <a href="#second"><i class="far fa-arrow-alt-circle-down bounce"></i></a>
+</section>
+<section id="second">
+    
+</section>
+
+
+
+</main>
+
+<% include ../partials/footer %>
+<% include ../partials/scripts %>
+<script src="/scripts/scrollDown.js"></script>
+<script src="/scripts/loginSwitch.js"></script>
+</body>
+</html>
