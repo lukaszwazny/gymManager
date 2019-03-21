@@ -1,0 +1,26 @@
+#back{
+    margin-top: 20px;
+    position: absolute;
+    left: 15px;
+}
+
+button i {
+    margin-right: 5px;
+}
+
+form {
+    position: absolute;
+    text-align: center;
+    width: 50%;
+    top: 20%;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 15px;
+    /*background-color: rgba(255,255, 255);*/
+    border-radius: 20px;
+}
+
+form h1 {
+    margin-bottom: 15px;
+    color: rgb(60,60,60);
+}

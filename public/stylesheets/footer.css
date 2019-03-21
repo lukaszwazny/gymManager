@@ -1,0 +1,53 @@
+#footer {
+background: rgba(255,191,0,0.5);/* Old Browsers */
+background: -moz-linear-gradient(top, rgba(255,191,0,0.5) 0%, rgba(168,126,0,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,191,0,0.5)), color-stop(100%, rgba(168,126,0,1)));/* Chrome, Safari4+ */
+background: -webkit-linear-gradient(top, rgba(255,191,0,0.5) 0%, rgba(168,126,0,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(255,191,0,0.5) 0%, rgba(168,126,0,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(255,191,0,0.5) 0%, rgba(168,126,0,1) 100%); /* IE 10+ */
+background: linear-gradient(to bottom, rgba(255,191,0,0.5) 0%, rgba(168,126,0,1) 100%);/* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbf00', endColorstr='#a87e00', GradientType=0 );/* IE6-9 */
+padding-bottom: 7px;
+}
+
+#footer p{
+    margin-bottom: 0;
+    border: none;
+    color: black;
+}
+
+.fab{
+    font-size: 1.45em;
+    margin-left: 5px;
+}
+
+#footer .fa{
+    font-size: 1.45em;
+    margin-left: 5px;
+}
+
+.fa-facebook-square{
+    color: #3b5998;
+}
+
+.fa-instagram{
+    color: #fb3958
+}
+
+.fa-google-plus-g{
+    color: #d34836
+}
+
+.fa-google-plus{
+    color: #d34836
+}
+
+#footer hr {
+    margin: 0;
+    border: 0.5px #a87e00 solid;
+    
+}
+
+.float-right {
+    float: right!important;
+}

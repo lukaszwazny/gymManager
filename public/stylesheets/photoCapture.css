@@ -1,0 +1,62 @@
+video {
+  transform: rotateY(180deg);
+}
+
+.crop{
+    width: 373px;
+    overflow:hidden;
+    display:block;
+    height: 480px;
+}
+#video{
+    margin-left: -133.5px;
+}
+
+canvas {
+    position: absolute;
+    top: 6vh;
+    /*width: 373px;*/
+    /*height: 480px;*/
+    padding: 0;
+    margin: auto;
+    display: block;
+    transform: rotateY(180deg);
+}
+
+.padding {
+    padding-top: 6vh;
+}
+
+.turn-on {
+    margin-top: 30vh;
+}
+
+.capture {
+    margin-top: 10px;
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+#taken {
+    margin-top: 10px;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+}
+
+#c{
+    visibility: hidden;
+}
+
+input {
+    visibility: hidden;
+}

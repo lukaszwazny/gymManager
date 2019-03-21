@@ -1,0 +1,260 @@
+/*.all-view-high {*/
+/*    padding-top: 20vh;                      old*/
+/*}*/
+
+/*@media screen and (max-width: 768px) {*/
+/*.all-view-high {*/
+/*        padding-top: 10vh;    */
+/*    }*/
+/*}*/
+
+.form-group {
+    width: 75%;
+}
+
+label {
+    color: #aa0000;
+    background-color: white;
+}
+
+#third p {
+    border: none;
+}
+
+.form-group p {
+    margin-top: 7px;
+}
+
+.password-match {
+    color: green;
+    border: 1px solid green!important;
+    border-radius: 8px;
+}
+
+.password-not-match {
+    color: red;
+    border: 1px solid red!important;
+    border-radius: 8px;
+}
+
+.form-check-label {
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    background-color: transparent;
+    padding: 5px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 5px;
+}
+
+/* progress bar */
+
+/**, *:after, *:before {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  box-sizing: border-box;*/
+/*  font-family: "Open Sans";*/
+/*}*/
+
+
+/* Form Progress */
+.progress {
+  background-color: transparent;
+  padding: 20px 15px;
+  position: fixed;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 4;
+}
+
+@media screen and (max-width: 575px) {
+.progress {
+        height: 100px;
+        width: 100%;    
+    }
+.padding {
+        height: 120px;
+    }
+.progress .circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+    }
+.progress .bar {
+        width: 85px;
+        top: 18px;
+    }
+.progress .circle .title {
+        margin-left: -10px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+.progress {
+        height: 100px;
+        width: 540px;    
+    }
+.padding {
+        height: 120px;
+    }
+.progress .circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+    }
+.progress .bar {
+        width: 85px;
+        top: 18px;
+    }
+.progress .circle .title {
+        margin-left: -10px;
+    }
+}
+
+@media screen and (max-width: 991px) and (min-width: 769px) {
+.progress {
+        width: 750px;
+        height: 100px;
+    }
+.padding {
+        height: 120px;
+    }
+.progress .circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+    }
+.progress .bar {
+        width: 125px;
+        top: 23px;
+    }
+.progress .circle .title {
+        margin-left: -5px;
+    }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+.progress {
+        width: 970px;
+        height: 120px;
+    }
+.padding {
+        height: 140px;
+    }
+.progress .circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 60px;
+    }
+.progress .bar {
+        width: 167.5px;
+        top: 27.5px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+.progress {
+        width: 1170px;  
+        height: 140px;
+    }
+.padding {
+        height: 160px;
+    }
+.progress .circle {
+        width: 70px;
+        height: 70px;
+        border-radius: 70px;
+    }
+.progress .bar {
+        width: 205px;
+        top: 32px;
+    }
+.progress .circle .title {
+        margin-left: 5px;
+    }
+}
+
+
+.progress .circle,
+.progress .bar {
+  display: inline-block;
+  background: white;
+  border: none;
+}
+.progress .bar {
+  position: relative;
+  height: 6px;
+}
+.progress .circle .label {
+  display: inline-block;
+  width: 80%;
+  height: 80%;
+  line-height: 80%;
+  border-radius: 80%;
+  margin-top: 10%;
+  padding-top: 30%;
+  color: #b5b5ba;
+  font-size: 17px;
+  background-color: white;
+}
+.progress .circle .title {
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 3px 5px;
+  font-size: 13px;
+  line-height: 15px;
+  width: 60px;
+}
+
+/* Done / Active */
+.progress .bar.done {
+  background: #8bc435;
+}
+.progress .bar.active {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8bc435+40,ffbf00+100 */
+background: #8bc435; /* Old browsers */
+background: -moz-linear-gradient(left, #8bc435 40%, #ffbf00 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #8bc435 40%,#ffbf00 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #8bc435 40%,#ffbf00 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8bc435', endColorstr='#ffbf00',GradientType=1 ); /* IE6-9 */
+}
+
+.progress .bar.active-after {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffbf00+0,ffffff+40 */
+background: #ffbf00; /* Old browsers */
+background: -moz-linear-gradient(left, #ffbf00 0%, #ffffff 40%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #ffbf00 0%,#ffffff 40%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #ffbf00 0%,#ffffff 40%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbf00', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+.progress .circle.done{
+  background-color: #8bc435;
+}
+
+.progress .circle.done .label {
+  color: #8bc435;
+  box-shadow: inset 0 0 2px rgba(0,0,0,.2);
+}
+.progress .circle.done .title {
+  /*color: #8bc435;*/
+  border-color: #8bc435;
+}
+
+.progress .circle.active{
+  background-color: #ffbf00;
+}
+
+.progress .circle.active .label {
+  color: #ffbf00;
+  box-shadow: inset 0 0 2px rgba(0,0,0,.2);
+}
+
+.progress .circle.active .title {
+  border-color: #ffbf00;
+}

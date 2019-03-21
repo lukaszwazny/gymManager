@@ -1,0 +1,29 @@
+hr {
+    margin: 0.3em;
+}
+
+.checked {
+background: #f39c12;
+background: -moz-linear-gradient(top, #f39c12 40%, #a67c00 100%);
+background: -webkit-linear-gradient(top, #f39c12 40%,#a67c00 100%);
+background: linear-gradient(to bottom, #f39c12 40%,#a67c00 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f39c12', endColorstr='#a67c00',GradientType=0 );
+}
+
+.checked .box-footer {
+    background-color: transparent;
+}
+
+.bigger {
+    margin: 1em;
+    border: 1px solid #a67c00;
+}
+
+#buy {
+    -webkit-animation-duration: 2.2s;
+    -moz-animation-duration: 2.2s;
+    -o-animation-duration: 2.2s;
+    -ms-animation-duration: 2.2s;
+    z-index: 10000;
+    position: relative;
+}

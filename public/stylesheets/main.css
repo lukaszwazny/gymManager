@@ -1,0 +1,154 @@
+/*colors:
+golds: dark - a67c00, lighter - ffbf00
+reds: dark - aa0000, lighter - ef0000
+for background: 222629, 907163, 5d5c61, 1a1a1d, 272727, 474b4f, 19181a, 222d32*/
+
+/* basic stuff */
+body {
+    background-color: #222d32;
+}
+
+h1 {
+  background: rgba(255,191,0,1);/* Old Browsers */
+background: -moz-linear-gradient(top, rgba(255,191,0,1) 0%, rgba(168,126,0,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,191,0,1)), color-stop(100%, rgba(168,126,0,1)));/* Chrome, Safari4+ */
+background: -webkit-linear-gradient(top, rgba(255,191,0,1) 0%, rgba(168,126,0,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(255,191,0,1) 0%, rgba(168,126,0,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(255,191,0,1) 0%, rgba(168,126,0,1) 100%); /* IE 10+ */
+background: linear-gradient(to bottom, rgba(255,191,0,1) 0%, rgba(168,126,0,1) 100%);/* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbf00', endColorstr='#a87e00', GradientType=0 );/* IE6-9 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media screen and (min-width: 1001px) {
+    h1{
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    h1{
+        font-size: 3.5vw;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    h1{
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    h1{
+        font-size: 7vw;
+    }
+}
+
+p{
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+@media screen and (max-width: 400px) {
+    p {
+        font-size: 0.9em;
+    }
+}
+
+.all-view-high {
+    height: 100vh;
+}
+
+/* forms */
+.has-float-label .form-control:placeholder-shown:not(:focus)+*{
+    font-size: 120%!important;
+    padding-top: 4px;
+}
+
+.form-control:focus{
+    box-shadow: none;
+}
+
+/* buttons */
+.btn-outline-secondary{
+    color: white!important;
+    border-color: white!important;
+}
+
+.btn-outline-secondary:hover{
+    background-color: #ef0000!important;
+    border-color: #ef0000!important;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled):active{
+    background-color: #ef0000!important;
+    border-color: #ef0000!important;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled):active:focus{
+    box-shadow:none!important;
+}
+
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none!important;
+}
+
+.btn-primary{
+    border-color: #a67c00!important;
+    background-color: #a67c00!important;
+    color: white!important;
+}
+
+.btn-primary:hover{
+    border-color: #8a6700!important;
+    background-color: #8a6700!important;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active{
+    border-color: #8a6700!important;
+    background-color: #8a6700!important;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus{
+    box-shadow:none!important;
+}
+
+@media screen and (max-width: 576px) {
+.tab {
+    padding-right: 5%;
+    float: right;
+}
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+.tab {
+    padding-right: 10%;
+    float: right;
+}
+}
+
+@media screen and (max-width: 991px) and (min-width: 769px) {
+.tab {
+    padding-right: 15%;
+    float: right;
+}
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+.tab {
+    padding-right: 20%;
+    float: right;
+}
+}
+
+@media screen and (min-width: 1200px) {
+.tab {
+    padding-right: 40%;
+    float: right;
+}
+}
+

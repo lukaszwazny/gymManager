@@ -1,0 +1,36 @@
+.logo img {
+    margin-top: -7px;
+}
+
+.navbar-nav>.user-menu>.dropdown-menu>li.user-header>img {
+    height: 115px;
+}
+
+.navbar-nav>.user-menu>.dropdown-menu>li.user-header {
+    height: 200px;
+}
+
+.navbar-nav>.user-menu .user-image {
+    height: 32px;
+    margin-top: -6px;
+}
+ .navbar-nav>.user-menu>.dropdown-menu>.user-footer {
+     background-color: #222d32;
+ }
+ 
+ .control-sidebar-menu {
+     margin: 0;
+     overflow-y: scroll;
+     max-height: 100vh;
+     margin-right: -10px;
+     padding-right: 10px;
+ }
+ 
+ .control-sidebar-heading {
+     margin-top: 0;
+ }
+ 
+ .black {
+     color: black;
+     border-color: black;
+ }

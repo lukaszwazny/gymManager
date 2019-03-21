@@ -1,0 +1,30 @@
+#dropbox {
+    padding-top: 40vh;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+label {
+    margin-bottom: 0;
+    color: #ef0000;
+    font-weight: bold;
+}
+
+label:hover {
+    color: #aa0000;
+    cursor: pointer;
+}
+
+img {
+  max-width: 100%; 
+}
+
+button {
+    margin-top: 10px;
+}
